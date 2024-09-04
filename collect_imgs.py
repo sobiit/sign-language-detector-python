@@ -10,7 +10,25 @@ if not os.path.exists(DATA_DIR):
 number_of_classes = 3
 dataset_size = 100
 
-cap = cv2.VideoCapture(2)
+# cap = cv2.VideoCapture(2)
+cap = cv2.VideoCapture(0)
+
+# new 
+# while True:
+#     ret, frame = cap.read()  # Capture frame
+#     if not ret:  # Check if frame was captured
+#         print("Failed to capture frame")
+#         break  # Exit loop or continue based on your needs
+    
+#     # Now safe to show the frame
+#     cv2.imshow('frame', frame)
+
+#     if cv2.waitKey(1) & 0xFF == ord('q'):
+#         break
+
+# cap.release()
+# cv2.destroyAllWindows()
+
 for j in range(number_of_classes):
     if not os.path.exists(os.path.join(DATA_DIR, str(j))):
         os.makedirs(os.path.join(DATA_DIR, str(j)))
